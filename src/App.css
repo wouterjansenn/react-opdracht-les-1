@@ -1,0 +1,112 @@
+/*------------CSS RESET -----------------*/
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+/*----------------- re-usables ---------------------*/
+
+.outer-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.innerContainer {
+    flex-basis: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 0 0.8rem 0 0.8rem;
+}
+
+.dashboard {
+    flex-basis: 1800px;
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+}
+
+
+/*----------------- sales article styling -----------------------------------*/
+
+.dashboard-wrapper {
+    display: flex;
+    justify-content: space-between;
+    /*padding-bottom: 2rem;*/
+}
+
+.productInformation {
+    border: solid 2px green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 125px;
+    width: 350px;
+}
+
+.productInformation p {
+    flex-basis: 75px;
+    width: 100%;
+    text-align: center;
+}
+
+/*------------------------Beste seller article-----------------------------*/
+
+h3 {
+    padding: 30px 0 30px 0;
+}
+
+.bestSellingTv {
+    display: flex;
+    flex-direction: row-reverse;
+    border: dotted black 2px;
+    padding: 25px;
+}
+
+.tvInformation {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    justify-content: space-evenly;
+    flex-grow: 3;
+}
+
+.imgWrapper {
+    width: 400px;
+    padding-right: 2rem;
+    flex-grow: 1;
+}
+
+.imgWrapper img {
+    width: 100%
+}
+
+.tvInformation img {
+    width: 15px;
+}
+
+.tvSpecification {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+.feature p {
+    display: inline;
+    padding-left: 0.4rem;
+}
+
+.feature img {
+    text-align: center;
+}
+
+.tvButton {
+    border: black solid 1px;
+    padding: 0.5rem;
+    margin: 1rem;
+}
