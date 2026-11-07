@@ -63,6 +63,7 @@ h3 {
     flex-direction: row-reverse;
     border: dotted black 2px;
     padding: 25px;
+    width: 800px;
 }
 
 .tvInformation {
@@ -73,6 +74,10 @@ h3 {
     flex-grow: 3;
 }
 
+.tvInformation img {
+    width: 15px;
+}
+
 .imgWrapper {
     width: 400px;
     padding-right: 2rem;
@@ -81,10 +86,6 @@ h3 {
 
 .imgWrapper img {
     width: 100%
-}
-
-.tvInformation img {
-    width: 15px;
 }
 
 .tvSpecification {

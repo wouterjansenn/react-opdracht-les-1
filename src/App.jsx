@@ -13,11 +13,14 @@ import {imgOfTv} from "./assets/helpers/imgOfTv.js";
 import {price} from "./assets/helpers/priceOfTv.js";
 import checkbox from "./assets/check.png"
 import minus from "./assets/minus.png"
+import {sortTvByAmountSold} from "./assets/helpers/sortingTvMostSold.js";
+import {sortTvByPrice} from "./assets/helpers/sortingTvLowPrice.js";
+import {sortTvByRefreshRate} from "./assets/helpers/sortingTvSport.js";
+import {sortTvSizes} from "./assets/helpers/sortTvBySize.js";
 
 function App() {
-    function buttonInfo(event) {
-        return console.log(event.target.textContent)
-    }
+
+    console.log(sortTvSizes(inventory))
 
     return (<>
             <header className="outer-container">
@@ -87,12 +90,68 @@ function App() {
                     </div>
                 </section>
 
-                <section>
-                    <h3>Alle tvs</h3>
-                    <button type="button" onClick={buttonInfo} className="tvButton">Meest verkocht eerst</button>
-                    <button type="button" onClick={buttonInfo} className="tvButton">Goedkoopste eerst</button>
-                    <button type="button" onClick={buttonInfo} className="tvButton">Meest geschikt voor sport eerst</button>
+                <section className="outer-container">
+                    <div className="innerContainer">
+                        <h3>Alle tvs</h3>
+                        <button type="button" onClick={() => console.log(sortTvByAmountSold(inventory))}
+                                className="tvButton">Meest verkocht eerst
+                        </button>
+                        <button type="button" onClick={() => console.log(sortTvByPrice(inventory))}
+                                className="tvButton">Goedkoopste eerst
+                        </button>
+                        <button type="button" onClick={() => console.log(sortTvByRefreshRate(inventory))}
+                                className="tvButton">Meest geschikt voor sport eerst
+                        </button>
+                        {/*<button type="button" onClick={} className="tvButton">Grootste schermgroottes eerst</button>*/}
+                    </div>
                 </section>
+
+                <section className="outerContainer">
+                    <div className="innerContainer">
+
+                        {inventory.map((television) => {
+                            return (
+                                <>
+                                    <figure className="bestSellingTv">
+                                        <div className="tvInformation">
+                                            <p>{television.brand} {television.type} - {television.name}</p>
+                                            <p>€{television.price}</p>
+                                            <p>{screenSizes(television)}</p>
+
+                                            <div className="tvSpecification">
+                                                <div className="feature">
+                                                    {television.options.map((option) => {
+                                                        if (option.applicable === true) {
+                                                            return (
+                                                                <>
+                                                                    <img src={checkbox} alt="available"/>
+                                                                    <p>{option.name}</p>
+                                                                </>)
+                                                        } else {
+                                                            return (
+                                                                <>
+                                                                    <img src={minus} alt="not available"/>
+                                                                    <p>{option.name}</p>
+                                                                </>)
+                                                        }
+
+                                                    })}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="imgWrapper">
+                                            <img src={imgOfTv(television)} alt="Picture of television"/>
+                                        </div>
+
+
+                                    </figure>
+                                </>
+                            )
+                        })}
+                    </div>
+                </section>
+
+
             </main>
 
 

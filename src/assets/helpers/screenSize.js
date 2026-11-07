@@ -1,4 +1,4 @@
-export function screenSizes(objectName) {
+  export function screenSizes(objectName) {
     let sizes = "";
 
     for (let i = 0; i < objectName.availableSizes.length; i++) {
@@ -14,3 +14,4 @@ export function screenSizes(objectName) {
 
     return sizes;
 }
+
