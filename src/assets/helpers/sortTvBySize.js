@@ -1,19 +1,15 @@
-export function sortTvSizes(inventory) {
-    return inventory.availableSizes.sort((a, b) => {
-        if (a.availableSizes > b.availableSizes) {
-            return 1
+function getBiggestSize(television) {
+    let biggestSize = 0;
+
+    for (let i = 0; i < television.availableSizes.length; i++) {
+        if (television.availableSizes[i] > biggestSize) {
+            biggestSize = television.availableSizes[i];
         }
-        if (a.availableSizes < b.availableSizes) {
-            return -1
-        } else return 0
-    })
+    }
+    return biggestSize;
 }
 
-// //
-// export function sortTvBySize (inventory){
-//     return inventory.sort((a,b) => {
-//         if (a.sortTvBySi)
-//
-//     })
-//
-// }
+export function sortTvSizes(inventory) {
+    return inventory.sort((a, b) => {
+        return getBiggestSize(b) - getBiggestSize(a);
+    })}
